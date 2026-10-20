@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="EcoMarket: descubre productos ecológicos, reutilizables y sostenibles para cuidar el planeta desde Bucaramanga.">
+    <title>EcoMarket | Productos Ecológicos y Sostenibles</title>
+
+    <!-- ESTUDIO: Fuentes con link, no con @import -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- ESTUDIO: Cuatro archivos CSS externos obligatorios -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+
+    <!-- ESTUDIO: Header semántico con navegación y accesos visuales -->
+    <header class="header">
+        <div class="container header-row">
+            <a class="logo" href="index.html" aria-label="EcoMarket, página de inicio"><!-- LOGOTIPO PENDIENTE: guardar logo-ecomarket.svg en img/icons/ --><img class="logo-image" src="img/icons/logo-ecomarket.svg" alt="Logotipo de EcoMarket"> <span>EcoMarket</span></a>
+
+            <nav class="nav" aria-label="Navegación principal">
+                <ul>
+                    <li><a class="active" href="index.html" aria-current="page">Inicio</a></li>
+                    <li><a href="views/productos.html">Productos</a></li>
+                    <li><a href="views/sobre-nosotros.html">Nosotros</a></li>
+                    <li><a href="views/contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
+
+            <!-- ESTUDIO: Accesos visuales sin JavaScript -->
+            <div class="header-actions">
+                <a class="header-action" href="views/productos.html#buscador" aria-label="Buscar productos"><img class="header-icon" src="img/icons/icono-busqueda.svg" alt=""> Buscar</a>
+                <a class="header-action" href="views/productos.html#catalogo" aria-label="Consultar catálogo y carrito"><img class="header-icon" src="img/icons/icono-carrito.svg" alt=""> Carrito</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- ESTUDIO: Hero con imagen de fondo y degradado oscuro -->
+        <section class="hero" id="inicio">
+            <div class="hero-content">
+                <span class="hero-badge">🌱 Consumo consciente · Bucaramanga</span>
+                <h1>Compra responsable,<br>vive sostenible</h1>
+                <p>Pequeños cambios, grandes beneficios para el planeta.</p>
+                <a href="views/productos.html" class="btn hero-button">Explorar productos →</a>
+            </div>
+        </section>
+
+        <!-- ESTUDIO: Seis productos destacados organizados con CSS Grid -->
+        <section class="featured section-space" id="destacados">
+            <div class="container">
+                <div class="section-heading">
+                    <span class="eyebrow">Consumo consciente</span>
+                    <h2>Nuestros productos destacados</h2>
+                    <p>Alternativas reutilizables para una vida más sostenible.</p>
+                </div>
+
+                <div class="featured-grid">
+                    <article class="product-card">
+                        <!-- IMAGEN PENDIENTE: guardar el archivo img/products/botella-reutilizable.jpg en esa ruta. -->
+                        <img src="img/products/botella-reutilizable.jpg" alt="Botella reutilizable para reducir el consumo de plástico" loading="lazy">
+                        <div class="product-info">
+                            <h3>Botella reutilizable</h3>
+                            <p>Una alternativa práctica para hidratarte cada día.</p>
+                            <p class="price">$60.000</p>
+                            <a class="btn btn-small" href="views/productos.html#botella">Ver más</a>
+                        </div>
+                    </article>
+
+                    <article class="product-card">
+                        <!-- IMAGEN PENDIENTE: guardar el archivo img/products/jabon-artesanal.jpg en esa ruta. -->
+                        <img src="img/products/jabon-artesanal.jpg" alt="Jabón artesanal para el cuidado personal" loading="lazy">
+                        <div class="product-info">
+                            <h3>Jabón artesanal</h3>
+                            <p>Una opción de cuidado personal para tu rutina diaria.</p>
+                            <p class="price">$25.000</p>
+                            <a class="btn btn-small" href="views/productos.html#jabon">Ver más</a>
+                        </div>
+                    </article>
+
+                    <article class="product-card">
+                        <!-- IMAGEN PENDIENTE: guardar el archivo img/products/envolturas-reutilizables.jpg en esa ruta. -->
+                        <img src="img/products/envolturas-reutilizables.jpg" alt="Envolturas reutilizables para conservar alimentos" loading="lazy">
+                        <div class="product-info">
+                            <h3>Envolturas reutilizables</h3>
+                            <p>Ayudan a reducir los envoltorios desechables.</p>
+                            <p class="price">$35.000</p>
+                            <a class="btn btn-small" href="views/productos.html#envolturas">Ver más</a>
+                        </div>
+                    </article>
+
+                    <article class="product-card">
+                        <!-- IMAGEN PENDIENTE: guardar el archivo img/products/cepillo-bambu.jpg en esa ruta. -->
+                        <img src="img/products/cepillo-bambu.jpg" alt="Cepillo de bambú para higiene personal" loading="lazy">
+                        <div class="product-info">
+                            <h3>Cepillo de bambú</h3>
+                            <p>Una alternativa para complementar tu higiene diaria.</p>
+                            <p class="price">$18.000</p>
+                            <a class="btn btn-small" href="views/productos.html#cepillo">Ver más</a>
+                        </div>
+                    </article>
+
+                    <article class="product-card">
+                        <!-- IMAGEN PENDIENTE: guardar el archivo img/products/kit-cero-desperdicio.jpg en esa ruta. -->
+                        <img src="img/products/kit-cero-desperdicio.jpg" alt="Kit de productos reutilizables para reducir residuos" loading="lazy">
+                        <div class="product-info">
+                            <h3>Kit cero desperdicio</h3>
+                            <p>Elementos reutilizables para empezar nuevos hábitos.</p>
+                            <p class="price">$75.000</p>
+                            <a class="btn btn-small" href="views/productos.html#kit">Ver más</a>
+                        </div>
+                    </article>
+
+                    <article class="product-card">
+                        <!-- IMAGEN PENDIENTE: guardar el archivo img/products/compostera-casera.jpg en esa ruta. -->
+                        <img src="img/products/compostera-casera.jpg" alt="Productos y elementos relacionados con el cuidado ambiental" loading="lazy">
+                        <div class="product-info">
+                            <h3>Compostera casera</h3>
+                            <p>Una opción para aprovechar residuos orgánicos.</p>
+                            <p class="price">$90.000</p>
+                            <a class="btn btn-small" href="views/productos.html#compostera">Ver más</a>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="section-action">
+                    <a href="views/productos.html" class="btn">Ver todo el catálogo →</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ESTUDIO: Franja animada mediante CSS, sin JavaScript -->
+        <div class="marquee" aria-label="Compromisos de EcoMarket">
+            <div class="marquee-track" aria-hidden="true">
+                <span>🌱 CONSUMO CONSCIENTE</span>
+                <span>♻️ PRODUCTOS REUTILIZABLES</span>
+                <span>🌍 CUIDEMOS EL PLANETA</span>
+                <span>🌿 HÁBITOS SOSTENIBLES</span>
+                <span>🌱 CONSUMO CONSCIENTE</span>
+                <span>♻️ PRODUCTOS REUTILIZABLES</span>
+                <span>🌍 CUIDEMOS EL PLANETA</span>
+                <span>🌿 HÁBITOS SOSTENIBLES</span>
+            </div>
+        </div>
+
+        <!-- ESTUDIO: Sección informativa con enlace a la historia de la marca -->
+        <section class="container benefits section-space">
+            <div class="section-heading">
+                <span class="eyebrow">Nuestro propósito</span>
+                <h2>Elegir mejor también es cuidar</h2>
+            </div>
+
+            <div class="benefit-grid">
+                <article class="benefit-card">
+                    <span class="benefit-icon" aria-hidden="true">♻️</span>
+                    <h3>Reutiliza</h3>
+                    <p>Encuentra opciones que puedes incorporar a tus hábitos diarios.</p>
+                </article>
+
+                <article class="benefit-card">
+                    <span class="benefit-icon" aria-hidden="true">🌱</span>
+                    <h3>Reduce residuos</h3>
+                    <p>Explora alternativas para disminuir el uso de productos desechables.</p>
+                </article>
+
+                <article class="benefit-card">
+                    <span class="benefit-icon" aria-hidden="true">🌎</span>
+                    <h3>Infórmate</h3>
+                    <p>Conoce nuestra historia y la intención detrás de EcoMarket.</p>
+                </article>
+            </div>
+
+            <div class="section-action">
+                <a href="views/sobre-nosotros.html" class="text-link">Conoce nuestra historia →</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- ESTUDIO: Footer con contacto, redes sociales y enlaces legales -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div>
+                <a class="footer-logo" href="index.html"><!-- LOGOTIPO PENDIENTE: guardar logo-ecomarket.svg en img/icons/ --><img class="footer-logo-image" src="img/icons/logo-ecomarket.svg" alt=""> EcoMarket</a>
+                <p>Pequeños cambios para un futuro más sostenible.</p>
+            </div>
+
+            <div>
+                <h2>Explora</h2>
+                <ul class="footer-links">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="views/productos.html">Productos</a></li>
+                    <li><a href="views/sobre-nosotros.html">Sobre nosotros</a></li>
+                    <li><a href="views/contacto.html">Contacto</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h2>Contacto</h2>
+                <p>Bucaramanga, Santander, Colombia</p>
+                <a href="views/contacto.html">Escríbenos</a>
+                <p><a href="mailto:hola@ecomarket.co">hola@ecomarket.co</a></p>
+            </div>
+
+            <div>
+                <h2>Redes y legal</h2>
+                <ul class="footer-links">
+                    <li><a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer"><img class="social-icon" src="img/icons/icono-instagram.svg" alt=""> Instagram ↗</a></li>
+                    <li><a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer"><img class="social-icon" src="img/icons/icono-facebook.svg" alt=""> Facebook ↗</a></li>
+                    <li><a href="views/contacto.html#privacidad">Privacidad</a></li>
+                </ul>
+            </div>
+        </div>
+        <p class="footer-bottom">© 2026 EcoMarket · Proyecto académico de HTML5 y CSS3.</p>
+    </footer>
+
+</body>
+</html>
