@@ -1,1 +1,155 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Ponte en contacto con EcoMarket para consultar nuestros productos ecológicos y sostenibles.">
+    <title>Contacto | EcoMarket</title>
+
+    <!-- ESTUDIO: Fuentes externas con link -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- ESTUDIO: Cuatro CSS externos, sin estilos en línea -->
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/layout.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/animations.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="container header-row">
+            <a class="logo" href="../index.html" aria-label="EcoMarket, inicio"><!-- LOGOTIPO PENDIENTE: guardar logo-ecomarket.svg en ../img/icons/ --><img class="logo-image" src="../img/icons/logo-ecomarket.svg" alt="Logotipo de EcoMarket"> <span>EcoMarket</span></a>
+
+            <nav class="nav" aria-label="Navegación principal">
+                <ul>
+                    <li><a href="../index.html">Inicio</a></li>
+                    <li><a href="productos.html">Productos</a></li>
+                    <li><a href="sobre-nosotros.html">Nosotros</a></li>
+                    <li><a class="active" href="contacto.html" aria-current="page">Contacto</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <a class="header-action" href="productos.html#buscador" aria-label="Buscar productos"><img class="header-icon" src="../img/icons/icono-busqueda.svg" alt=""> Buscar</a>
+                <a class="header-action" href="productos.html#catalogo" aria-label="Consultar catálogo y carrito"><img class="header-icon" src="../img/icons/icono-carrito.svg" alt=""> Carrito</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- ESTUDIO: Presentación de la página de contacto -->
+        <section class="page-banner">
+            <div class="container">
+                <span class="eyebrow">Estamos para ayudarte</span>
+                <h1>Hablemos</h1>
+                <p>Envíanos tus dudas o consultas sobre EcoMarket.</p>
+            </div>
+        </section>
+
+        <section class="container contact-layout section-space">
+            <!-- ESTUDIO: Formulario accesible con validación HTML y CSS -->
+            <form class="contact-form" action="mailto:hola@ecomarket.co" method="post" enctype="text/plain">
+                <h2>Escríbenos</h2>
+                <p class="form-intro">Los campos marcados con * son obligatorios.</p>
+
+                <div class="field">
+                    <label for="nombre">Nombre completo *</label>
+                    <input type="text" id="nombre" name="nombre" placeholder="Tu nombre completo" autocomplete="name" required minlength="2">
+                    <span class="error">Escribe tu nombre para continuar.</span>
+                </div>
+
+                <div class="field">
+                    <label for="correo">Correo electrónico *</label>
+                    <input type="email" id="correo" name="correo" placeholder="tu@correo.com" autocomplete="email" required>
+                    <span class="error">Ingresa una dirección de correo válida.</span>
+                </div>
+
+                <div class="field">
+                    <label for="asunto">Asunto</label>
+                    <input type="text" id="asunto" name="asunto" placeholder="Motivo de tu consulta">
+                </div>
+
+                <div class="field">
+                    <label for="mensaje">Mensaje *</label>
+                    <textarea id="mensaje" name="mensaje" placeholder="Cuéntanos en qué podemos ayudarte..." rows="5" required minlength="10"></textarea>
+                    <span class="error">Escribe un mensaje de al menos 10 caracteres.</span>
+                </div>
+
+                <button type="submit" class="btn form-button">Preparar mensaje →</button>
+
+                <p class="form-note">Este formulario utiliza el programa de correo configurado en tu dispositivo. El envío depende de que tengas uno disponible.</p>
+            </form>
+
+            <!-- ESTUDIO: Datos de contacto y mapa ilustrativo -->
+            <aside class="contact-information">
+                <h2>Información de contacto</h2>
+                <p>Consulta nuestros canales de contacto y ubicación de referencia.</p>
+
+                <div class="contact-map">
+                    <!-- IMAGEN PENDIENTE: guardar el archivo ../img/maps/mapa-bucaramanga.jpg en esa ruta. -->
+                        <img src="../img/maps/mapa-bucaramanga.jpg" alt="Imagen ilustrativa de un mapa" loading="lazy">
+                    <span>Ubicación ilustrativa · Bucaramanga</span>
+                </div>
+
+                <address class="contact-details">
+                    <p><span aria-hidden="true">📍</span> Bucaramanga, Santander, Colombia</p>
+                    <p><span aria-hidden="true">✉️</span> <a href="mailto:hola@ecomarket.co">hola@ecomarket.co</a></p>
+                    <p><span aria-hidden="true">🕘</span> Horario de atención por confirmar</p>
+                </address>
+
+                <div class="social-links">
+                    <h3>Síguenos</h3>
+                    <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram de ejemplo"><img class="social-icon" src="../img/icons/icono-instagram.svg" alt=""> Instagram ↗</a>
+                    <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook de ejemplo"><img class="social-icon" src="../img/icons/icono-facebook.svg" alt=""> Facebook ↗</a>
+                </div>
+            </aside>
+        </section>
+
+        <!-- ESTUDIO: Sección de privacidad para el enlace del pie de página -->
+        <section class="container privacy-note section-space" id="privacidad">
+            <h2>Privacidad de tus datos</h2>
+            <p>Utiliza únicamente datos reales y evita compartir información sensible que no sea necesaria para atender tu consulta.</p>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div>
+                <a class="footer-logo" href="../index.html"><!-- LOGOTIPO PENDIENTE: guardar logo-ecomarket.svg en ../img/icons/ --><img class="footer-logo-image" src="../img/icons/logo-ecomarket.svg" alt=""> EcoMarket</a>
+                <p>Pequeños cambios para un futuro más sostenible.</p>
+            </div>
+
+            <div>
+                <h2>Explora</h2>
+                <ul class="footer-links">
+                    <li><a href="../index.html">Inicio</a></li>
+                    <li><a href="productos.html">Productos</a></li>
+                    <li><a href="sobre-nosotros.html">Sobre nosotros</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h2>Contacto</h2>
+                <p>Bucaramanga, Santander, Colombia</p>
+                <a href="contacto.html">Escríbenos</a>
+                <p><a href="mailto:hola@ecomarket.co">hola@ecomarket.co</a></p>
+            </div>
+
+            <div>
+                <h2>Redes y legal</h2>
+                <ul class="footer-links">
+                    <li><a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer"><img class="social-icon" src="../img/icons/icono-instagram.svg" alt=""> Instagram ↗</a></li>
+                    <li><a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer"><img class="social-icon" src="../img/icons/icono-facebook.svg" alt=""> Facebook ↗</a></li>
+                    <li><a href="contacto.html#privacidad">Privacidad</a></li>
+                </ul>
+            </div>
+        </div>
+        <p class="footer-bottom">© 2026 EcoMarket · Proyecto académico de HTML5 y CSS3.</p>
+    </footer>
+
+</body>
+</html>
 
