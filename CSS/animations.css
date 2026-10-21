@@ -133,3 +133,59 @@
         animation: none;
     }
 }
+
+/* =========================================
+   BARRA ANIMADA DE SOSTENIBILIDAD
+========================================= */
+
+.marquee {
+    width: 100%;
+    overflow: hidden;
+    background: #27ae60;
+    color: #ffffff;
+    padding: 14px 0;
+}
+
+.marquee__track {
+    display: flex;
+    width: max-content;
+    animation: marquee-scroll 25s linear infinite;
+}
+
+.marquee__content {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    gap: 40px;
+    padding-right: 40px;
+    white-space: nowrap;
+}
+
+.marquee__content span {
+    font-size: 0.95rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+@keyframes marquee-scroll {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+/* Pausar el movimiento cuando el usuario pasa el cursor */
+.marquee:hover .marquee__track {
+    animation-play-state: paused;
+}
+
+/* Respetar las preferencias de movimiento reducido */
+@media (prefers-reduced-motion: reduce) {
+    .marquee__track {
+        animation: none;
+    }
+}
+
