@@ -1,0 +1,129 @@
+/**
+ * main.css - EcoMarket
+ * ESTUDIO:
+ * - :root guarda las variables reutilizables de colores, bordes y sombras.
+ * - Usamos tonos verdes y un fondo claro para transmitir sostenibilidad.
+ * - Las fuentes se cargan con link en HTML, no con @import.
+ * - El selector universal normaliza márgenes, rellenos y dimensiones.
+ * - Se respetan las preferencias de movimiento reducido del usuario.
+ */
+
+:root {
+    --green: #2ecc71;
+    --green-dark: #27ae60;
+    --green-deep: #052e16;
+    --green-light: #bbf7d0;
+    --bg: #ffffff;
+    --bg-soft: #f5f5dc;
+    --text: #052e16;
+    --text-light: #4a7c59;
+    --line: #dcfce7;
+    --danger: #b91c1c;
+    --success: #15803d;
+    --radius: 20px;
+    --shadow: 0 10px 30px rgba(34, 197, 94, 0.12);
+    --shadow-hover: 0 22px 45px rgba(34, 197, 94, 0.22);
+    --transition: 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+}
+
+body {
+    font-family: 'Inter', Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    min-width: 320px;
+}
+
+h1,
+h2,
+h3 {
+    font-family: 'Fraunces', Georgia, serif;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: clamp(2.2rem, 6vw, 4rem);
+}
+
+h2 {
+    font-size: clamp(1.7rem, 4vw, 2.5rem);
+}
+
+h3 {
+    font-size: 1.15rem;
+}
+
+p {
+    margin-bottom: 0.8rem;
+}
+
+a {
+    color: var(--green-dark);
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+button,
+input,
+textarea {
+    font: inherit;
+}
+
+button,
+input,
+textarea,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* ESTUDIO: Indicador de foco visible para navegación con teclado */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+label:focus-visible {
+    outline: 3px solid #166534;
+    outline-offset: 4px;
+}
+
+/* ESTUDIO: Contenido accesible visualmente oculto */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* =====================================
+   RESPETO POR LAS PREFERENCIAS DE MOVIMIENTO
+===================================== */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms;
+        animation-iteration-count: 1;
+        transition-duration: 0.01ms;
+        scroll-behavior: auto;
+    }
+}
