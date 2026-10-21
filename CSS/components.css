@@ -1,0 +1,552 @@
+/**
+ * components.css - Navegación, tarjetas, botones y formularios
+ * ESTUDIO:
+ * - Flexbox organiza los elementos de navegación.
+ * - Las tarjetas usan bordes redondeados y sombras.
+ * - Los favoritos se activan con checkbox:checked, sin JavaScript.
+ * - Los filtros usan radios y selectores de hermanos.
+ * - La validación usa :valid, :invalid y :placeholder-shown.
+ * - Se incluyen selectores de atributos, combinadores y pseudoclases.
+ */
+
+/* ESTUDIO: Logo y navegación */
+/* ESTUDIO: Imagen del logotipo y pequeños iconos guardados en img/icons */
+.logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.logo-image,
+.footer-logo-image {
+    width: 38px;
+    height: 38px;
+    object-fit: contain;
+}
+
+.header-icon,
+.social-icon {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+    vertical-align: middle;
+}
+
+.footer-logo-image {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 6px;
+}
+
+.logo,
+.footer-logo {
+    color: inherit;
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 6px;
+    list-style: none;
+}
+
+.nav a {
+    display: block;
+    padding: 8px 12px;
+    border-radius: 20px;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: background var(--transition), color var(--transition);
+}
+
+.nav a:hover,
+.nav a.active {
+    background: #ffffff;
+    color: var(--green-dark);
+}
+
+.header-action {
+    padding: 7px 10px;
+    border: 1px solid rgba(255, 255, 255, 0.65);
+    border-radius: 20px;
+    color: #ffffff;
+    font-size: 0.85rem;
+    text-decoration: none;
+    transition: background var(--transition), color var(--transition);
+}
+
+.header-action:hover {
+    background: #ffffff;
+    color: var(--green-dark);
+}
+
+/* ESTUDIO: Botones reutilizables */
+.btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    min-height: 44px;
+    padding: 12px 22px;
+    border: 2px solid var(--green);
+    border-radius: 100px;
+    background: var(--green);
+    color: var(--green-deep);
+    font-weight: 700;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background var(--transition), color var(--transition), transform var(--transition);
+}
+
+.btn:hover {
+    background: var(--green-dark);
+    border-color: var(--green-dark);
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+.hero-button {
+    margin-top: 14px;
+    background: #ffffff;
+    border-color: #ffffff;
+    color: var(--green-deep);
+}
+
+.hero-button:hover {
+    background: var(--green-light);
+    border-color: var(--green-light);
+    color: var(--green-deep);
+}
+
+.btn-small {
+    min-height: 38px;
+    margin-top: 10px;
+    padding: 8px 15px;
+    font-size: 0.85rem;
+}
+
+.text-link {
+    font-weight: 700;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 4px;
+}
+
+/* ESTUDIO: Tarjetas de productos */
+.product-card {
+    min-width: 0;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background: #ffffff;
+    box-shadow: var(--shadow);
+    text-align: left;
+    transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.product-card img {
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.product-info {
+    padding: 16px;
+}
+
+.product-card h3 {
+    margin: 8px 0;
+}
+
+.product-card p {
+    margin-bottom: 8px;
+}
+
+.product-card .price {
+    margin-top: 10px;
+    color: var(--green-dark);
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+/* ESTUDIO: Etiquetas de disponibilidad */
+.stock {
+    display: inline-block;
+    padding: 4px 9px;
+    border-radius: 30px;
+    font-size: 0.72rem;
+    font-weight: 700;
+}
+
+.stock--available {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.stock--unavailable {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+/* ESTUDIO: Favoritos sin JavaScript */
+.fav-check {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+}
+
+.fav-btn {
+    position: absolute;
+    z-index: 2;
+    top: 10px;
+    right: 10px;
+    display: grid;
+    width: 40px;
+    height: 40px;
+    place-items: center;
+    border-radius: 50%;
+    background: #ffffff;
+    color: #4b5563;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+    font-size: 1.25rem;
+    cursor: pointer;
+    transition: color var(--transition), background var(--transition);
+}
+
+.fav-check:checked + .fav-btn {
+    background: #ffe4e6;
+    color: #dc2626;
+}
+
+.fav-check:focus-visible + .fav-btn {
+    outline: 3px solid var(--green-dark);
+    outline-offset: 3px;
+}
+
+/* ESTUDIO: Sidebar y filtros */
+.filter-label {
+    display: block;
+    margin-bottom: 6px;
+    padding: 10px 12px;
+    border-radius: 10px;
+    color: var(--text);
+    cursor: pointer;
+    transition: background var(--transition), color var(--transition);
+}
+
+.filter-label:hover {
+    background: var(--bg-soft);
+}
+
+.filter-note {
+    color: var(--text-light);
+    font-size: 0.8rem;
+}
+
+.range-control {
+    display: block;
+    width: 100%;
+    margin: 12px 0;
+    accent-color: var(--green-dark);
+}
+
+.check-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 10px 0;
+}
+
+.check-label input {
+    accent-color: var(--green-dark);
+}
+
+/* ESTUDIO: Filtros CSS mediante hermanos generales */
+#filter-home:checked ~ .catalog-layout .products-grid .product-card:not([data-cat="home"]),
+#filter-fashion:checked ~ .catalog-layout .products-grid .product-card:not([data-cat="fashion"]),
+#filter-care:checked ~ .catalog-layout .products-grid .product-card:not([data-cat="care"]),
+#filter-food:checked ~ .catalog-layout .products-grid .product-card:not([data-cat="food"]) {
+    display: none;
+}
+
+/* ESTUDIO: Apariencia de la categoría activa */
+#filter-all:checked ~ .catalog-layout .filter-label[for="filter-all"],
+#filter-home:checked ~ .catalog-layout .filter-label[for="filter-home"],
+#filter-fashion:checked ~ .catalog-layout .filter-label[for="filter-fashion"],
+#filter-care:checked ~ .catalog-layout .filter-label[for="filter-care"],
+#filter-food:checked ~ .catalog-layout .filter-label[for="filter-food"] {
+    background: var(--green);
+    color: var(--green-deep);
+    font-weight: 700;
+}
+
+/* ESTUDIO: Formulario y validación */
+.contact-form {
+    padding: 24px;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background: #ffffff;
+    box-shadow: var(--shadow);
+}
+
+.form-intro,
+.form-note {
+    color: var(--text-light);
+    font-size: 0.85rem;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 18px;
+}
+
+.field label {
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+
+.field input,
+.field textarea {
+    width: 100%;
+    min-width: 0;
+    padding: 12px;
+    border: 2px solid #b7d8c0;
+    border-radius: 12px;
+    background: #ffffff;
+    color: var(--text);
+    outline: none;
+    transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+.field textarea {
+    resize: vertical;
+}
+
+.field input:focus,
+.field textarea:focus {
+    border-color: var(--green-dark);
+    box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.12);
+}
+
+/* ESTUDIO: Verde cuando el campo tiene un valor válido */
+.field input:valid:not(:placeholder-shown),
+.field textarea:valid:not(:placeholder-shown) {
+    border-color: var(--success);
+}
+
+/* ESTUDIO: Rojo para los campos inválidos que ya se han empezado a rellenar */
+.field input:invalid:not(:placeholder-shown),
+.field textarea:invalid:not(:placeholder-shown) {
+    border-color: var(--danger);
+}
+
+.error {
+    display: none;
+    color: var(--danger);
+    font-size: 0.8rem;
+}
+
+.field input:invalid:not(:placeholder-shown) + .error,
+.field textarea:invalid:not(:placeholder-shown) + .error {
+    display: block;
+}
+
+.form-button {
+    width: 100%;
+}
+
+.form-note {
+    margin-top: 14px;
+}
+
+/* ESTUDIO: Tarjetas de principios */
+.principle {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 20px;
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    background: #ffffff;
+    transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.principle-icon {
+    flex-shrink: 0;
+    font-size: 2rem;
+}
+
+/* ESTUDIO: Testimonios con scroll-snap */
+.testimonials {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    padding: 8px 4px 20px;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+}
+
+.testi {
+    flex: 0 0 85%;
+    min-width: 0;
+    padding: 24px;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background: #ffffff;
+    box-shadow: var(--shadow);
+    scroll-snap-align: start;
+    transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.testi img {
+    width: 76px;
+    height: 76px;
+    margin-bottom: 12px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.testi blockquote {
+    margin: 14px 0;
+}
+
+.stars {
+    color: #b7791f;
+    letter-spacing: 0.1em;
+}
+
+.testi-location,
+.carousel-note {
+    display: block;
+    margin-top: 8px;
+    color: var(--text-light);
+    font-size: 0.8rem;
+}
+
+@media (min-width: 600px) {
+    .testi {
+        flex-basis: 48%;
+    }
+}
+
+@media (min-width: 900px) {
+    .testi {
+        flex-basis: 31%;
+    }
+}
+
+/* ESTUDIO: Paginación visual */
+.pagination {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-top: 32px;
+}
+
+.pagination a {
+    display: inline-flex;
+    min-width: 38px;
+    min-height: 38px;
+    align-items: center;
+    justify-content: center;
+    padding: 7px 10px;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    background: #ffffff;
+    text-decoration: none;
+}
+
+.pagination a:hover,
+.pagination .page-number--active {
+    background: var(--green);
+    border-color: var(--green);
+    color: var(--green-deep);
+}
+
+/* ESTUDIO: Redes sociales y animación de escala */
+.social-links a {
+    display: inline-block;
+    padding: 8px 12px;
+    border: 1px solid var(--line);
+    border-radius: 30px;
+    text-decoration: none;
+    transition: transform var(--transition), background var(--transition);
+}
+
+.social-links a:hover {
+    background: var(--bg-soft);
+    transform: scale(1.05);
+}
+
+/* ESTUDIO: Pseudoclase estructural */
+.products-grid .product-card:nth-child(even) {
+    border-color: #ccebd5;
+}
+
+/* ESTUDIO: Pseudoclase :focus-within */
+.contact-form:focus-within {
+    box-shadow: 0 12px 34px rgba(34, 197, 94, 0.16);
+}
+
+/* ESTUDIO: Pseudoclase :target */
+.privacy-note:target {
+    padding-inline: 20px;
+    border-left: 4px solid var(--green);
+    background: var(--bg-soft);
+}
+
+/* ESTUDIO: Pseudoelementos decorativos */
+.eyebrow::before {
+    content: "✦ ";
+}
+
+.section-heading h2::after {
+    display: block;
+    width: 56px;
+    height: 3px;
+    margin: 12px auto 0;
+    border-radius: 5px;
+    background: var(--green);
+    content: "";
+}
+
+/* ESTUDIO: Combinador de descendencia y selector de atributo */
+.footer a[target="_blank"] {
+    text-underline-offset: 4px;
+}
+
+.footer a:hover {
+    color: var(--green-light);
+    text-decoration-thickness: 2px;
+}
+
+@media (hover: hover) {
+    .product-card:hover,
+    .principle:hover,
+    .testi:hover,
+    .benefit-card:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--shadow-hover);
+    }
+
+    .product-card:hover img {
+        transform: scale(1.04);
+    }
+}
