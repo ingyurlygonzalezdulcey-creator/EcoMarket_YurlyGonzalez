@@ -1,1 +1,420 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Explora el catálogo EcoMarket: productos reutilizables, ecológicos y alternativas para un consumo más sostenible.">
+    <title>Productos | EcoMarket</title>
 
+    <!-- ESTUDIO: Fuentes externas mediante link -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- ESTUDIO: Cuatro archivos CSS compartidos -->
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/layout.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/animations.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="container header-row">
+            <a class="logo" href="../index.html" aria-label="EcoMarket, inicio"><!-- LOGOTIPO PENDIENTE: guardar logo-ecomarket.svg en ../img/icons/ --><img class="logo-image" src="../img/icons/logo-ecomarket.svg" alt="Logotipo de EcoMarket"> <span>EcoMarket</span></a>
+
+            <nav class="nav" aria-label="Navegación principal">
+                <ul>
+                    <li><a href="../index.html">Inicio</a></li>
+                    <li><a class="active" href="productos.html" aria-current="page">Productos</a></li>
+                    <li><a href="sobre-nosotros.html">Nosotros</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <a class="header-action" href="productos.html#buscador" aria-label="Buscar productos"><img class="header-icon" src="../img/icons/icono-busqueda.svg" alt=""> Buscar</a>
+                <a class="header-action" href="productos.html#catalogo" aria-label="Consultar catálogo y carrito"><img class="header-icon" src="../img/icons/icono-carrito.svg" alt=""> Carrito</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- ESTUDIO: Introducción del catálogo -->
+        <section class="page-banner">
+            <div class="container">
+                <span class="eyebrow">Compra con conciencia</span>
+                <h1>Catálogo sostenible</h1>
+                <p>Encuentra alternativas reutilizables para tu día a día.</p>
+            </div>
+        </section>
+
+        <!-- ESTUDIO: Radios que controlan filtros de categoría sin JavaScript -->
+        <input class="visually-hidden" type="radio" name="cat" id="filter-all" checked>
+        <input class="visually-hidden" type="radio" name="cat" id="filter-home">
+        <input class="visually-hidden" type="radio" name="cat" id="filter-fashion">
+        <input class="visually-hidden" type="radio" name="cat" id="filter-care">
+        <input class="visually-hidden" type="radio" name="cat" id="filter-food">
+
+        <div class="container catalog-layout" id="catalogo">
+
+            <!-- ESTUDIO: Barra lateral sticky con filtros -->
+            <aside class="sidebar" aria-label="Filtros del catálogo">
+                <h2>Filtrar productos</h2>
+
+                <fieldset class="filter-group">
+                    <legend>Categorías</legend>
+
+                    <label class="filter-label" for="filter-all">Todos los productos (20)</label>
+                    <label class="filter-label" for="filter-home">Hogar</label>
+                    <label class="filter-label" for="filter-fashion">Moda</label>
+                    <label class="filter-label" for="filter-care">Cuidado personal</label>
+                    <label class="filter-label" for="filter-food">Alimentos</label>
+                </fieldset>
+
+                <!-- ESTUDIO: Controles visuales adicionales de precio y disponibilidad -->
+                <fieldset class="filter-group">
+                    <legend>Rango de precios</legend>
+                    <label for="price-range">Precio máximo</label>
+                    <input class="range-control" type="range" id="price-range" min="10000" max="150000" step="5000" value="150000">
+                    <p class="filter-note">$10.000 – $150.000</p>
+                </fieldset>
+
+                <fieldset class="filter-group">
+                    <legend>Disponibilidad</legend>
+                    <label class="check-label">
+                        <input type="checkbox" name="availability" value="available">
+                        En stock
+                    </label>
+                    <label class="check-label">
+                        <input type="checkbox" name="availability" value="unavailable">
+                        Agotados
+                    </label>
+                </fieldset>
+
+                <p class="filter-note">Los controles de precio y disponibilidad son demostrativos.</p>
+            </aside>
+
+            <section class="catalog-content" aria-label="Productos disponibles">
+                <!-- ESTUDIO: Buscador visual sin JavaScript -->
+                <div class="catalog-toolbar" id="buscador">
+                    <label for="product-search">Buscar en el catálogo</label>
+                    <input id="product-search" type="search" placeholder="Ej. botella, jabón, bolsa..." autocomplete="off">
+                    <span class="catalog-count">20 productos</span>
+                </div>
+
+                <!-- ESTUDIO: Grid de 20 tarjetas con data-cat para filtros CSS -->
+                <div class="products-grid">
+
+                    <article class="product-card" id="botella" data-cat="home">
+                        <input type="checkbox" id="fav1" class="fav-check">
+                        <label for="fav1" class="fav-btn" aria-label="Marcar botella como favorita">♥</label>
+                        <!-- IMAGEN PENDIENTE: guardar el archivo ../img/products/botella-reutilizable.jpg en esa ruta. -->
+                        <img src="../img/products/botella-reutilizable.jpg" alt="Botella reutilizable" loading="lazy">
+                        <div class="product-info">
+                            <span class="stock stock--available">En stock</span>
+                            <h3>Botella reutilizable</h3>
+                            <p class="price">$60.000</p>
+                            <a class="btn btn-small" href="#botella">Ver producto</a>
+                        </div>
+                    </article>
+
+                    <article class="product-card" id="jabon" data-cat="care">
+                        <input type="checkbox" id="fav2" class="fav-check">
+                        <label for="fav2" class="fav-btn" aria-label="Marcar jabón como favorito">♥</label>
+                        <!-- IMAGEN PENDIENTE: guardar el archivo ../img/products/jabon-artesanal.jpg en esa ruta. -->
+                        <img src="../img/products/jabon-artesanal.jpg" alt="Jabón artesanal" loading="lazy">
+                        <div class="product-info">
+                            <span class="stock stock--available">En stock</span>
+                            <h3>Jabón artesanal</h3>
+                            <p class="price">$25.000</p>
+                            <a class="btn btn-small" href="#jabon">Ver producto</a>
+                        </div>
+                    </article>
+
+                    <article class="product-card" id="envolturas" data-cat="food">
+                        <input type="checkbox" id="fav3" class="fav-check">
+                        <label for="fav3" class="fav-btn" aria-label="Marcar envolturas como favoritas">♥</label>
+                        <!-- IMAGEN PENDIENTE: guardar el archivo ../img/products/envolturas-reutilizables.jpg en esa ruta. -->
+                        <img src="../img/products/envolturas-reutilizables.jpg" alt="Envolturas reutilizables para alimentos" loading="lazy">
+                        <div class="product-info">
+                            <span class="stock stock--available">En stock</span>
+                            <h3>Envolturas reutilizables</h3>
+                            <p class="price">$35.000</p>
+                            <a class="btn btn-small" href="#envolturas">Ver producto</a>
+                        </div>
+                    </article>
+
+                    <article class="product-card" id="cepillo" data-cat="care">
+                        <input type="checkbox" id="fav4" class="fav-check">
+                        <label for="fav4" class="fav-btn" aria-label="Marcar cepillo como favorito">♥</label>
+                        <!-- IMAGEN PENDIENTE: guardar el archivo ../img/products/cepillo-bambu.jpg en esa ruta. -->
+                        <img src="../img/products/cepillo-bambu.jpg" alt="Cepillo de bambú" loading="lazy">
+                        <div class="product-info">
+                            <span class="stock stock--available">En stock</span>
+                            <h3>Cepillo de bambú</h3>
+                            <p class="price">$18.000</p>
+                            <a class="btn btn-small" href="#cepillo">Ver producto</a>
+                        </div>
+                    </article>
+
+                    <article class="product-card" id="kit" data-cat="home">
+                        <input type="checkbox" id="fav5" class="fav-check">
+                        <label for="fav5" class="fav-btn" aria-label="Marcar kit como favorito">♥</label>
+                        <!-- IMAGEN PENDIENTE: guardar el archivo ../img/products/kit-cero-desperdicio.jpg en esa ruta. -->
+                        <img src="../img/products/kit-cero-desperdicio.jpg" alt="Kit reutilizable" loading="lazy">
+                        <div class="product-info">
+                            <span class="stock stock--available">En stock</span>
+                            <h3>Kit cero desperdicio</h3>
+                            <p class="price">$75.000</p>
+                            <a class="btn btn-small" href="#kit">Ver producto</a>
+                        </div>
+                    </article>
+
+                    <article class="product-card" id="compostera" data-cat="home">
+                        <input type="checkbox" id="fav6" class="fav-check">
+                        <label for="fav6" class="fav-btn" aria-label="Marcar compostera como favorita">♥</label>
+                        <!-- IMAGEN PENDIENTE: guardar el archivo ../img/products/compostera-casera.jpg en esa ruta. -->
+                        <img src="../img/products/compostera-casera.jpg" alt="Elementos para compostaje doméstico" loading="lazy">
+                        <div class="product-info">
+                            <span class="stock stock--unavailable">Agotado</span>
+                            <h3>Compostera casera</h3>
+                            <p class="price">$90.000</p>
+                            <a class="btn btn-small" href="#compostera">Ver producto</a>
+                        </div>
+                    </article>
+
+                    <article class="product-card" data-cat="fashion">
+                        <input type="checkbox" id="fav7" class="fav-check">
+                        <label for="fav7" class="fav-btn" aria-label="Marcar bolsa de tela como favorita">♥</label>
+                        <!-- IMAGEN PENDIENTE: guardar el archivo ../img/products/bolsa-tela.jpg en esa ruta. -->
+                        <img src="../img/products/bolsa-tela.jpg" alt="Bolsa de tela reutilizable" loading="lazy">
+                        <div class="product-info">
+                            <span class="stock stock--available">En stock</span>
+                            <h3>Bolsa de tela</h3>
+                            <p class="price">$20.000</p>
+                            <a class="btn btn-small" href="#catalogo">Ver producto</a>
+                        </div>
+                    </article>
+
+                    <article class="product-card" data-cat="care">
+                        <input type="checkbox" id="fav8" class="fav-check">
+                        <label for="fav8" class="fav-btn" aria-label="Marcar champú como favorito">♥</label>
+                        <!-- IMAGEN PENDIENTE: guardar el archivo ../img/products/champu-solido.jpg en esa ruta. -->
+                        <img src="../img/products/champu-solido.jpg" alt="Champú sólido" loading="lazy">
+                        <div class="product-info">
+                            <span class="stock stock--available">En stock</span>
+                            <h3>Champú sólido</h3>
+                            <p class="price">$30.000</p>
+                            <a class="btn btn-small" href="#catalogo">Ver producto</a>
+                        </div>
+                    </article>
+
+                    <article class="product-card" data-cat="home">
+                        <input type="checkbox" id="fav9" class="fav-check">
+                        <label for="fav9" class="fav-btn" aria-label="Marcar cuchara como favorita">♥</label>
+                        <!-- IMAGEN PENDIENTE: guardar el archivo ../img/products/cuchara-madera.jpg en esa ruta. -->
+                        <img src="../img/products/cuchara-madera.jpg" alt="Cuchara de madera" loading="lazy">
+                        <div class="product-info">
+                            <span class="stock stock--available">En stock</span>
+                            <h3>Cuchara de madera</h3>
+                            <p class="price">$15.000</p>
+                            <a class="btn btn-small" href="#catalogo">Ver producto</a>
+                        </div>
+                    </article>
+
+                    <article class="product-card" data-cat="care">
+                        <input type="checkbox" id="fav10" class="fav-check">
+                        <label for="fav10" class="fav-btn" aria-label="Marcar esponja como favorita">♥</label>
+                        <!-- IMAGEN PENDIENTE: guardar el archivo ../img/products/esponja-vegetal.jpg en esa ruta. -->
+                        <img src="../img/products/esponja-vegetal.jpg" alt="Esponja vegetal" loading="lazy">
+                        <div class="product-info">
+                            <span class="stock stock--available">En stock</span>
+                            <h3>Esponja vegetal</h3>
+                            <p class="price">$12.000</p>
+                            <a class="btn btn-small" href="#catalogo">Ver producto</a>
+                        </div>
+                    </article>
+
+                    <article class="product-card" data-cat="home">
+                        <input type="checkbox" id="fav11" class="fav-check">
+                        <label for="fav11" class="fav-btn" aria-label="Marcar pitillos como favoritos">♥</label>
+                        <!-- IMAGEN PENDIENTE: guardar el archivo ../img/products/pitillos-reutilizables.jpg en esa ruta. -->
+                        <img src="../img/products/pitillos-reutilizables.jpg" alt="Accesorios reutilizables" loading="lazy">
+                        <div class="product-info">
+                            <span class="stock stock--available">En stock</span>
+                            <h3>Pitillos reutilizables</h3>
+                            <p class="price">$22.000</p>
+                            <a class="btn btn-small" href="#catalogo">Ver producto</a>
+                        </div>
+                    </article>
+
+                    <article class="product-card" data-cat="food">
+                        <input type="checkbox" id="fav12" class="fav-check">
+                        <label for="fav12" class="fav-btn" aria-label="Marcar tapas como favoritas">♥</label>
+                        <!-- IMAGEN PENDIENTE: guardar el archivo ../img/products/tapas-reutilizables.jpg en esa ruta. -->
+                        <img src="../img/products/tapas-reutilizables.jpg" alt="Accesorios para conservar alimentos" loading="lazy">
+                        <div class="product-info">
+                            <span class="stock stock--available">En stock</span>
+                            <h3>Tapas reutilizables</h3>
+                            <p class="price">$38.000</p>
+                            <a class="btn btn-small" href="#catalogo">Ver producto</a>
+                        </div>
+                    </article>
+
+                    <article class="product-card" data-cat="care">
+                        <input type="checkbox" id="fav13" class="fav-check">
+                        <label for="fav13" class="fav-btn" aria-label="Marcar desodorante como favorito">♥</label>
+                        <!-- IMAGEN PENDIENTE: guardar el archivo ../img/products/desodorante-natural.jpg en esa ruta. -->
+                        <img src="../img/products/desodorante-natural.jpg" alt="Producto de cuidado personal" loading="lazy">
+                        <div class="product-info">
+                            <span class="stock stock--available">En stock</span>
+                            <h3>Desodorante natural</h3>
+                            <p class="price">$28.000</p>
+                            <a class="btn btn-small" href="#catalogo">Ver producto</a>
+                        </div>
+                    </article>
+
+                    <article class="product-card" data-cat="food">
+                        <input type="checkbox" id="fav14" class="fav-check">
+                        <label for="fav14" class="fav-btn" aria-label="Marcar envoltura como favorita">♥</label>
+                        <!-- IMAGEN PENDIENTE: guardar el archivo ../img/products/envoltura-multiusos.jpg en esa ruta. -->
+                        <img src="../img/products/envoltura-multiusos.jpg" alt="Envoltura reutilizable para alimentos" loading="lazy">
+                        <div class="product-info">
+                            <span class="stock stock--available">En stock</span>
+                            <h3>Envoltura multiusos</h3>
+                            <p class="price">$42.000</p>
+                            <a class="btn btn-small" href="#catalogo">Ver producto</a>
+                        </div>
+                    </article>
+
+                    <article class="product-card" data-cat="food">
+                        <input type="checkbox" id="fav15" class="fav-check">
+                        <label for="fav15" class="fav-btn" aria-label="Marcar tazón como favorito">♥</label>
+                        <!-- IMAGEN PENDIENTE: guardar el archivo ../img/products/tazon-reutilizable.jpg en esa ruta. -->
+                        <img src="../img/products/tazon-reutilizable.jpg" alt="Tazón reutilizable" loading="lazy">
+                        <div class="product-info">
+                            <span class="stock stock--available">En stock</span>
+                            <h3>Tazón reutilizable</h3>
+                            <p class="price">$45.000</p>
+                            <a class="btn btn-small" href="#catalogo">Ver producto</a>
+                        </div>
+                    </article>
+
+                    <article class="product-card" data-cat="home">
+                        <input type="checkbox" id="fav16" class="fav-check">
+                        <label for="fav16" class="fav-btn" aria-label="Marcar jabonera como favorita">♥</label>
+                        <!-- IMAGEN PENDIENTE: guardar el archivo ../img/products/jabonera-bambu.jpg en esa ruta. -->
+                        <img src="../img/products/jabonera-bambu.jpg" alt="Jabonera reutilizable" loading="lazy">
+                        <div class="product-info">
+                            <span class="stock stock--available">En stock</span>
+                            <h3>Jabonera de bambú</h3>
+                            <p class="price">$18.000</p>
+                            <a class="btn btn-small" href="#catalogo">Ver producto</a>
+                        </div>
+                    </article>
+
+                    <article class="product-card" data-cat="fashion">
+                        <input type="checkbox" id="fav17" class="fav-check">
+                        <label for="fav17" class="fav-btn" aria-label="Marcar bolsas como favoritas">♥</label>
+                        <!-- IMAGEN PENDIENTE: guardar el archivo ../img/products/bolsas-mercado.jpg en esa ruta. -->
+                        <img src="../img/products/bolsas-mercado.jpg" alt="Bolsas reutilizables para compras" loading="lazy">
+                        <div class="product-info">
+                            <span class="stock stock--available">En stock</span>
+                            <h3>Bolsas para mercado</h3>
+                            <p class="price">$25.000</p>
+                            <a class="btn btn-small" href="#catalogo">Ver producto</a>
+                        </div>
+                    </article>
+
+                    <article class="product-card" data-cat="food">
+                        <input type="checkbox" id="fav18" class="fav-check">
+                        <label for="fav18" class="fav-btn" aria-label="Marcar lonchera como favorita">♥</label>
+                        <!-- IMAGEN PENDIENTE: guardar el archivo ../img/products/lonchera-reutilizable.jpg en esa ruta. -->
+                        <img src="../img/products/lonchera-reutilizable.jpg" alt="Accesorios para llevar alimentos" loading="lazy">
+                        <div class="product-info">
+                            <span class="stock stock--available">En stock</span>
+                            <h3>Lonchera reutilizable</h3>
+                            <p class="price">$55.000</p>
+                            <a class="btn btn-small" href="#catalogo">Ver producto</a>
+                        </div>
+                    </article>
+
+                    <article class="product-card" data-cat="care">
+                        <input type="checkbox" id="fav19" class="fav-check">
+                        <label for="fav19" class="fav-btn" aria-label="Marcar pasta dental como favorita">♥</label>
+                        <!-- IMAGEN PENDIENTE: guardar el archivo ../img/products/pasta-dental-solida.jpg en esa ruta. -->
+                        <img src="../img/products/pasta-dental-solida.jpg" alt="Producto de higiene bucal" loading="lazy">
+                        <div class="product-info">
+                            <span class="stock stock--unavailable">Agotado</span>
+                            <h3>Pasta dental sólida</h3>
+                            <p class="price">$20.000</p>
+                            <a class="btn btn-small" href="#catalogo">Ver producto</a>
+                        </div>
+                    </article>
+
+                    <article class="product-card" data-cat="fashion">
+                        <input type="checkbox" id="fav20" class="fav-check">
+                        <label for="fav20" class="fav-btn" aria-label="Marcar kit inicial como favorito">♥</label>
+                        <!-- IMAGEN PENDIENTE: guardar el archivo ../img/products/kit-higiene-ecologica.jpg en esa ruta. -->
+                        <img src="../img/products/kit-higiene-ecologica.jpg" alt="Kit de productos reutilizables" loading="lazy">
+                        <div class="product-info">
+                            <span class="stock stock--available">En stock</span>
+                            <h3>Kit inicial sostenible</h3>
+                            <p class="price">$120.000</p>
+                            <a class="btn btn-small" href="#catalogo">Ver producto</a>
+                        </div>
+                    </article>
+
+                </div>
+
+                <!-- ESTUDIO: Paginación visual, sin JavaScript -->
+                <nav class="pagination" aria-label="Paginación del catálogo">
+                    <a href="#catalogo" aria-label="Página anterior">← Anterior</a>
+                    <a href="#catalogo" class="page-number page-number--active" aria-current="page">1</a>
+                    <a href="#catalogo" class="page-number">2</a>
+                    <a href="#catalogo" class="page-number">3</a>
+                    <a href="#catalogo" aria-label="Página siguiente">Siguiente →</a>
+                </nav>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div>
+                <a class="footer-logo" href="../index.html"><!-- LOGOTIPO PENDIENTE: guardar logo-ecomarket.svg en ../img/icons/ --><img class="footer-logo-image" src="../img/icons/logo-ecomarket.svg" alt=""> EcoMarket</a>
+                <p>Pequeños cambios para un futuro más sostenible.</p>
+            </div>
+
+            <div>
+                <h2>Explora</h2>
+                <ul class="footer-links">
+                    <li><a href="../index.html">Inicio</a></li>
+                    <li><a href="productos.html">Productos</a></li>
+                    <li><a href="sobre-nosotros.html">Sobre nosotros</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h2>Contacto</h2>
+                <p>Bucaramanga, Santander, Colombia</p>
+                <a href="contacto.html">Escríbenos</a>
+                <p><a href="mailto:hola@ecomarket.co">hola@ecomarket.co</a></p>
+            </div>
+
+            <div>
+                <h2>Redes y legal</h2>
+                <ul class="footer-links">
+                    <li><a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer"><img class="social-icon" src="../img/icons/icono-instagram.svg" alt=""> Instagram ↗</a></li>
+                    <li><a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer"><img class="social-icon" src="../img/icons/icono-facebook.svg" alt=""> Facebook ↗</a></li>
+                    <li><a href="contacto.html#privacidad">Privacidad</a></li>
+                </ul>
+            </div>
+        </div>
+        <p class="footer-bottom">© 2026 EcoMarket · Proyecto académico de HTML5 y CSS3.</p>
+    </footer>
+
+</body>
+</html>
