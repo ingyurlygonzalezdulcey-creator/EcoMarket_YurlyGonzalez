@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300">
+
+  <!-- Hoja -->
+  <path d="M175 25
+           C230 25 255 55 250 105
+           C245 155 205 170 165 150
+           C135 135 120 95 130 60
+           C140 35 155 25 175 25Z"
+        fill="#2E7D32"/>
+
+  <!-- Tallo -->
+  <rect x="145" y="120"
+        width="8"
+        height="40"
+        fill="#1B5E20"/>
+
+  <!-- Nervaduras -->
+  <path d="M150 130 C165 95 190 70 220 50"
+        stroke="#1B5E20"
+        stroke-width="4"
+        fill="none"/>
+
+  <path d="M170 95 L195 83"
+        stroke="#1B5E20"
+        stroke-width="3"
+        fill="none"/>
+
+  <path d="M154 110 L178 110"
+        stroke="#1B5E20"
+        stroke-width="3"
+        fill="none"/>
+
+  <!-- Canasta -->
+  <path d="M40 145
+           H260
+           C270 145 278 153 278 163
+           C278 215 245 260 150 260
+           C55 260 22 215 22 163
+           C22 153 30 145 40 145Z"
+        fill="none"
+        stroke="#D8D0CC"
+        stroke-width="10"/>
+
+  <!-- Trenzado horizontal -->
+  <g stroke="#D8D0CC" stroke-width="8">
+    <line x1="40" y1="175" x2="260" y2="175"/>
+    <line x1="35" y1="200" x2="265" y2="200"/>
+    <line x1="45" y1="225" x2="255" y2="225"/>
+  </g>
+
+  <!-- Trenzado vertical -->
+  <g stroke="#D8D0CC" stroke-width="8">
+    <line x1="70" y1="150" x2="80" y2="245"/>
+    <line x1="110" y1="150" x2="120" y2="250"/>
+    <line x1="150" y1="145" x2="150" y2="255"/>
+    <line x1="190" y1="150" x2="180" y2="250"/>
+    <line x1="230" y1="150" x2="220" y2="245"/>
+  </g>
+
+</svg>

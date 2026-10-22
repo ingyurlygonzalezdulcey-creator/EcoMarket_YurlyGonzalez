@@ -14,13 +14,13 @@
 .logo {
     display: inline-flex;
     align-items: center;
-    gap: 8px;
+    gap: 12px;
 }
 
 .logo-image,
 .footer-logo-image {
-    width: 38px;
-    height: 38px;
+    width: 55px;
+    height: 55px;
     object-fit: contain;
 }
 
@@ -43,7 +43,7 @@
 .footer-logo {
     color: inherit;
     font-family: 'Fraunces', Georgia, serif;
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     font-weight: 700;
     text-decoration: none;
 }
@@ -225,15 +225,11 @@
     cursor: pointer;
     transition: color var(--transition), background var(--transition);
 }
-
-.fav-check:checked + .fav-btn {
+/* ESTUDIO: Pseudoclase :active para favoritos */
+.fav-btn:active {
     background: #ffe4e6;
     color: #dc2626;
-}
-
-.fav-check:focus-visible + .fav-btn {
-    outline: 3px solid var(--green-dark);
-    outline-offset: 3px;
+    transform: scale(0.92);
 }
 
 /* ESTUDIO: Sidebar y filtros */
