@@ -33,21 +33,22 @@ La identidad visual de EcoMarket utiliza colores asociados con la naturaleza, la
 | Fondo principal | `#ffffff` |
 | Fondo suave | `#f0fdf4` |
 
-**Tipografías:** Fraunces e Inter, integradas mediante Google Fonts.
+**Tipografías:** Arial para los textos generales y Georgia para los títulos, utilizando fuentes disponibles en el sistema, sin depender de servicios externos.
 
 **Estilo:** diseño limpio, espacios organizados, tarjetas de productos, navegación sencilla y colores inspirados en la naturaleza.
 
-## 4. Tecnologías utilizadas
+## Tecnologías utilizadas
 
-- **HTML5:** estructura semántica y contenido de las páginas.
-- **CSS3:** estilos, distribución, diseño responsive, animaciones e interacciones visuales.
-- **Flexbox y CSS Grid:** organización de los elementos.
-- **Media queries:** adaptación a diferentes tamaños de pantalla.
-- **Pseudo-clases CSS:** estados visuales e interacciones.
-- **Git y GitHub:** control de versiones y almacenamiento del repositorio.
-- **Google Fonts:** integración de tipografías.
+- **HTML5:** estructura semántica y organización del contenido de las páginas.
+- **CSS3:** diseño visual, estilos, animaciones y efectos interactivos.
+- **Flexbox y CSS Grid:** distribución y organización de los elementos.
+- **Media Queries:** adaptación del diseño a dispositivos móviles, tabletas y computadores.
+- **Selectores y pseudoclases CSS:** efectos `:hover`, validación de formularios y controles visuales.
+- **Animaciones CSS:** transiciones, efectos visuales y movimiento de la marquesina.
+- **Tipografías del sistema:** Arial para los textos generales y Georgia para los títulos, sin cargar fuentes externas.
+- **Git y GitHub:** control de versiones, administración de ramas y alojamiento del repositorio.
 
-El proyecto no utiliza JavaScript ni frameworks. Los estilos se encuentran organizados en cuatro archivos CSS separados. No se utiliza `@import` para cargar las fuentes.
+**Restricciones técnicas:** el proyecto se desarrolla exclusivamente con HTML5 y CSS3, sin JavaScript, frameworks, `@import` ni dependencias externas para el diseño.
 
 ## 5. Estructura del proyecto
 
@@ -86,41 +87,55 @@ EcoMarket_YurlyGonzalez/
 └── capturas/
 ```
 
-Las carpetas de imágenes contienen los recursos visuales utilizados por las páginas. La carpeta `capturas/` se utiliza para documentar el funcionamiento del sitio.
-
 ## 6. Páginas del sitio web
 
 ### Inicio — `index.html`
 
 Página principal que presenta la tienda, sus productos destacados y los accesos a las demás secciones.
 
-**Captura de pantalla:**
+**Captura de pantalla - Escritorio:**
 
-![Pendiente de agregar](capturas/01-inicio-escritorio.png)
+![captura inicio](capturas/01-inicio-escritorio.png)
+
+**Captura de pantalla - Movil:**
+
+![captura inicio](capturas/05-inicio-movil.png)
 
 ### Productos — `views/productos.html`
 
 Catálogo con 20 productos ecológicos, tarjetas de productos, precios, imágenes y controles visuales de filtrado.
 
-**Captura de pantalla:**
+**Captura de pantalla - Escritorio:**
 
-![Pendiente de agregar](capturas/04-catalogo-productos.png)
+![captura catalogo](capturas/02-catalogo-productos.png)
+
+**Captura de pantalla - Movil:**
+
+![captura catalogo](capturas/06-catalogo-productos-movil.png)
 
 ### Sobre nosotros — `views/sobre-nosotros.html`
 
 Página informativa que presenta la historia, los valores y el propósito de EcoMarket.
 
-**Captura de pantalla:**
+**Captura de pantalla - Escritorio:**
 
-![Pendiente de agregar](capturas/05-sobre-nosotros.png)
+![captura nosotros](capturas/03-sobre-nosotros.png)
+
+**Captura de pantalla - Movil:**
+
+![captura nosotros](capturas/07-sobre-nosotros-movil.png)
 
 ### Contacto — `views/contacto.html`
 
 Página con formulario de contacto, validaciones HTML/CSS, información de contacto y mapa integrado.
 
-**Captura de pantalla:**
+**Captura de pantalla - Escritorio:**
 
-![Pendiente de agregar](capturas/06-contacto.png)
+![captura contacto](capturas/04-contacto.png)
+
+**Captura de pantalla - Movil:**
+
+![captura contacto](capturas/08-contacto-movil.png)
 
 ## 7. Características principales
 
@@ -147,14 +162,6 @@ La cuadrícula del catálogo contempla:
 - **Tableta:** dos columnas.
 - **Celular:** una columna.
 
-Se debe comprobar la visualización en pantallas pequeñas, especialmente a un ancho de 360 píxeles, para evitar desbordamientos horizontales.
-
-**Evidencias responsive:**
-
-- Escritorio: `capturas/09-responsive-escritorio.png`
-- Tableta: `capturas/08-responsive-tableta.png`
-- Celular: `capturas/07-responsive-movil.png`
-
 ## 9. Interacciones y limitaciones
 
 Las interacciones visuales se implementan exclusivamente con HTML y CSS.
@@ -180,41 +187,22 @@ Los estilos se distribuyen en cuatro archivos:
 
 Esta separación facilita el mantenimiento y la organización del código.
 
-## 11. Instalación y ejecución
+## 11. Instrucciones de visualización
 
-1. Clonar o descargar el repositorio.
-2. Abrir la carpeta del proyecto en Visual Studio Code.
-3. Verificar que las carpetas `css/`, `views/` e `img/` conserven su estructura.
-4. Abrir `index.html` en un navegador.
-5. Navegar por las diferentes páginas y comprobar los enlaces, imágenes y estilos.
+1. Descarga o clona el repositorio de EcoMarket desde GitHub.
+2. Abre la carpeta del proyecto en Visual Studio Code.
+3. Verifica que las carpetas `css/`, `views/` e `img/` mantengan su estructura original.
+4. Abre el archivo `index.html` en un navegador web para visualizar la página principal.
+5. Utiliza el menú de navegación para acceder a las cuatro páginas del sitio:
+   - **Inicio:** `index.html`
+   - **Productos:** `views/productos.html`
+   - **Sobre nosotros:** `views/sobre-nosotros.html`
+   - **Contacto:** `views/contacto.html`
+6. Cambia el tamaño de la ventana del navegador para comprobar la adaptación del diseño a computadores, tabletas y celulares.
 
-No se requiere instalar dependencias ni ejecutar un servidor para visualizar la versión estática localmente.
+El proyecto utiliza HTML5 y CSS3, por lo que no requiere instalar dependencias ni ejecutar un servidor para su visualización local.
 
-## 12. Evidencias del proyecto
-
-Las siguientes capturas se agregarán a la carpeta `capturas/`:
-
-| Archivo | Evidencia |
-|---|---|
-| `01-inicio-escritorio.png` | Página de inicio en computador. |
-| `02-inicio-movil.png` | Página de inicio en celular. |
-| `03-pagina-principal.png` | Sección principal o presentación. |
-| `04-catalogo-productos.png` | Catálogo completo. |
-| `05-sobre-nosotros.png` | Página sobre nosotros. |
-| `06-contacto.png` | Página de contacto. |
-| `07-responsive-movil.png` | Diseño responsive en celular. |
-| `08-responsive-tableta.png` | Diseño responsive en tableta. |
-| `09-responsive-escritorio.png` | Diseño responsive en escritorio. |
-| `10-catalogo-movil.png` | Catálogo en celular. |
-| `11-formulario-contacto.png` | Formulario y validación visual. |
-| `12-efectos-css.png` | Animaciones y efectos CSS. |
-| `13-estructura-proyecto.png` | Estructura de carpetas en Visual Studio Code. |
-| `14-sitio-publicado.png` | Sitio web publicado. |
-| `15-git-ramas-commits.png` | Ramas y commits de Git. |
-
-Las capturas se incorporarán a medida que se complete la documentación y publicación del proyecto.
-
-## 13. Control de versiones y repositorio
+## 12. Control de versiones y repositorio
 
 El proyecto se gestiona mediante Git y GitHub, utilizando ramas para organizar el desarrollo de las diferentes secciones.
 
@@ -233,15 +221,11 @@ Ramas de trabajo utilizadas:
 - `feature/estilos`
 - `feature/readme`
 
-La evidencia del historial de cambios y las ramas se incluirá en `capturas/15-git-ramas-commits.png`.
-
 ## 14. Publicación del proyecto
 
 **Enlace del sitio publicado:**
 
-[Pendiente de agregar el enlace definitivo de GitHub Pages u otra plataforma de publicación.]
-
-Una vez publicado el sitio, se reemplazará este texto por la URL real y se agregará una captura de la página funcionando.
+https://ingyurlygonzalezdulcey-creator.github.io/EcoMarket_YurlyGonzalez/
 
 ## 15. Autoría
 

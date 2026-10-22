@@ -7,9 +7,7 @@
     <meta name="description"
         content="EcoMarket: descubre productos ecológicos, reutilizables y sostenibles para cuidar el planeta desde Bucaramanga.">
     <title>EcoMarket | Productos Ecológicos y Sostenibles</title>
-
-        <link rel="icon" type="image/png" href="img/logo/logo.png">
-    <!-- ESTUDIO: Cuatro archivos CSS externos obligatorios -->
+    <link rel="icon" type="image/png" href="img/logo/logo.png">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/layout.css">
     <link rel="stylesheet" href="css/components.css">
@@ -21,9 +19,8 @@
     <!-- ESTUDIO: Header semántico con navegación y accesos visuales -->
     <header class="header">
         <div class="container header-row">
-            <a class="logo" href="index.html"
-                aria-label="EcoMarket, página de inicio"><!-- LOGOTIPO PENDIENTE: guardar logo-ecomarket.svg en img/icons/ --><img
-                    class="logo-image" src="img/icons/logo-ecomarket.svg" alt="Logotipo de EcoMarket">
+            <a class="logo" href="index.html" aria-label="EcoMarket, página de inicio"><img class="logo-image"
+                    src="img/icons/logo-ecomarket.svg" alt="Logotipo de EcoMarket">
                 <span>EcoMarket</span></a>
 
             <nav class="nav" aria-label="Navegación principal">
@@ -68,7 +65,6 @@
 
                 <div class="featured-grid">
                     <article class="product-card">
-                        <!-- IMAGEN PENDIENTE: guardar el archivo img/products/botella-reutilizable.jpg en esa ruta. -->
                         <img src="img/products/botella-reutilizable.jpg"
                             alt="Botella reutilizable para reducir el consumo de plástico" loading="lazy">
                         <div class="product-info">
@@ -80,7 +76,6 @@
                     </article>
 
                     <article class="product-card">
-                        <!-- IMAGEN PENDIENTE: guardar el archivo img/products/jabon-artesanal.jpg en esa ruta. -->
                         <img src="img/products/jabon-artesanal.jpg" alt="Jabón artesanal para el cuidado personal"
                             loading="lazy">
                         <div class="product-info">
@@ -92,7 +87,6 @@
                     </article>
 
                     <article class="product-card">
-                        <!-- IMAGEN PENDIENTE: guardar el archivo img/products/envolturas-reutilizables.jpg en esa ruta. -->
                         <img src="img/products/envolturas-reutilizables.jpg"
                             alt="Envolturas reutilizables para conservar alimentos" loading="lazy">
                         <div class="product-info">
@@ -104,7 +98,7 @@
                     </article>
 
                     <article class="product-card">
-                        <!-- IMAGEN PENDIENTE: guardar el archivo img/products/cepillo-bambu.jpg en esa ruta. -->
+
                         <img src="img/products/cepillo-bambu.jpg" alt="Cepillo de bambú para higiene personal"
                             loading="lazy">
                         <div class="product-info">
@@ -116,7 +110,7 @@
                     </article>
 
                     <article class="product-card">
-                        <!-- IMAGEN PENDIENTE: guardar el archivo img/products/kit-cero-desperdicio.jpg en esa ruta. -->
+
                         <img src="img/products/kit-cero-desperdicio.jpg"
                             alt="Kit de productos reutilizables para reducir residuos" loading="lazy">
                         <div class="product-info">
@@ -128,7 +122,7 @@
                     </article>
 
                     <article class="product-card">
-                        <!-- IMAGEN PENDIENTE: guardar el archivo img/products/compostera-casera.jpg en esa ruta. -->
+
                         <img src="img/products/compostera-casera.jpg"
                             alt="Productos y elementos relacionados con el cuidado ambiental" loading="lazy">
                         <div class="product-info">
@@ -196,20 +190,17 @@
 
     <!-- BARRA ANIMADA DE SOSTENIBILIDAD -->
     <section class="marquee" aria-label="Mensajes de sostenibilidad">
-        <div class="marquee__track">
-            <div class="marquee__content">
-                <span>🌱 CONSUMO CONSCIENTE</span>
-                <span>♻️ PRODUCTOS REUTILIZABLES</span>
-                <span>🌍 CUIDEMOS EL PLANETA</span>
-                <span>🌿 HÁBITOS SOSTENIBLES</span>
-            </div>
+        <div class="marquee-track" aria-hidden="true">
+            <span>🌱 CONSUMO CONSCIENTE</span>
+            <span>♻️ PRODUCTOS REUTILIZABLES</span>
+            <span>🌍 CUIDEMOS EL PLANETA</span>
+            <span>🌿 HÁBITOS SOSTENIBLES</span>
 
-            <div class="marquee__content" aria-hidden="true">
-                <span>🌱 CONSUMO CONSCIENTE</span>
-                <span>♻️ PRODUCTOS REUTILIZABLES</span>
-                <span>🌍 CUIDEMOS EL PLANETA</span>
-                <span>🌿 HÁBITOS SOSTENIBLES</span>
-            </div>
+            <!-- Repetición para mantener el movimiento continuo -->
+            <span>🌱 CONSUMO CONSCIENTE</span>
+            <span>♻️ PRODUCTOS REUTILIZABLES</span>
+            <span>🌍 CUIDEMOS EL PLANETA</span>
+            <span>🌿 HÁBITOS SOSTENIBLES</span>
         </div>
     </section>
 
@@ -217,9 +208,8 @@
     <footer class="footer">
         <div class="container footer-grid">
             <div>
-                <a class="footer-logo"
-                    href="index.html"><!-- LOGOTIPO PENDIENTE: guardar logo-ecomarket.svg en img/icons/ --><img
-                        class="footer-logo-image" src="img/icons/logo-ecomarket.svg" alt=""> EcoMarket</a>
+                <a class="footer-logo" href="index.html"><img class="footer-logo-image"
+                        src="img/icons/logo-ecomarket.svg" alt=""> EcoMarket</a>
                 <p>Pequeños cambios para un futuro más sostenible.</p>
             </div>
 
@@ -247,7 +237,10 @@
                                 class="social-icon" src="img/icons/icono-instagram.svg" alt=""> Instagram ↗</a></li>
                     <li><a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer"><img
                                 class="social-icon" src="img/icons/icono-facebook.svg" alt=""> Facebook ↗</a></li>
-                    <li><a href="views/contacto.html#privacidad">Privacidad</a></li>
+                    <a href="views/contacto.html#privacidad">
+                        <img class="social-icon" src="img/icons/icono-privacidad.svg" alt="">
+                        Privacidad
+                    </a>
                 </ul>
             </div>
         </div>
@@ -255,4 +248,5 @@
     </footer>
 
 </body>
+
 </html>

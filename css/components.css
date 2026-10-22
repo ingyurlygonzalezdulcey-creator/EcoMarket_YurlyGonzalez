@@ -1,6 +1,5 @@
 /**
  * components.css - Navegación, tarjetas, botones y formularios
- * ESTUDIO:
  * - Flexbox organiza los elementos de navegación.
  * - Las tarjetas usan bordes redondeados y sombras.
  * - Los favoritos se activan con checkbox:checked, sin JavaScript.
@@ -9,8 +8,8 @@
  * - Se incluyen selectores de atributos, combinadores y pseudoclases.
  */
 
-/* ESTUDIO: Logo y navegación */
-/* ESTUDIO: Imagen del logotipo y pequeños iconos guardados en img/icons */
+/*Logo y navegación */
+/*Imagen del logotipo y pequeños iconos guardados en img/icons */
 .logo {
     display: inline-flex;
     align-items: center;
@@ -198,7 +197,7 @@
     color: #991b1b;
 }
 
-/* ESTUDIO: Favoritos sin JavaScript */
+/* ESTUDIO: Favoritos */
 .fav-check {
     position: absolute;
     width: 1px;
@@ -225,6 +224,7 @@
     cursor: pointer;
     transition: color var(--transition), background var(--transition);
 }
+
 /* ESTUDIO: Pseudoclase :active para favoritos */
 .fav-btn:active {
     background: #ffe4e6;
@@ -271,19 +271,19 @@
 }
 
 /* ESTUDIO: Filtros CSS mediante hermanos generales */
-#filter-home:checked ~ .catalog-layout .products-grid .product-card:not([data-cat="home"]),
-#filter-fashion:checked ~ .catalog-layout .products-grid .product-card:not([data-cat="fashion"]),
-#filter-care:checked ~ .catalog-layout .products-grid .product-card:not([data-cat="care"]),
-#filter-food:checked ~ .catalog-layout .products-grid .product-card:not([data-cat="food"]) {
+#filter-home:checked~.catalog-layout .products-grid .product-card:not([data-cat="home"]),
+#filter-fashion:checked~.catalog-layout .products-grid .product-card:not([data-cat="fashion"]),
+#filter-care:checked~.catalog-layout .products-grid .product-card:not([data-cat="care"]),
+#filter-food:checked~.catalog-layout .products-grid .product-card:not([data-cat="food"]) {
     display: none;
 }
 
 /* ESTUDIO: Apariencia de la categoría activa */
-#filter-all:checked ~ .catalog-layout .filter-label[for="filter-all"],
-#filter-home:checked ~ .catalog-layout .filter-label[for="filter-home"],
-#filter-fashion:checked ~ .catalog-layout .filter-label[for="filter-fashion"],
-#filter-care:checked ~ .catalog-layout .filter-label[for="filter-care"],
-#filter-food:checked ~ .catalog-layout .filter-label[for="filter-food"] {
+#filter-all:checked~.catalog-layout .filter-label[for="filter-all"],
+#filter-home:checked~.catalog-layout .filter-label[for="filter-home"],
+#filter-fashion:checked~.catalog-layout .filter-label[for="filter-fashion"],
+#filter-care:checked~.catalog-layout .filter-label[for="filter-care"],
+#filter-food:checked~.catalog-layout .filter-label[for="filter-food"] {
     background: var(--green);
     color: var(--green-deep);
     font-weight: 700;
@@ -350,6 +350,7 @@
 .field textarea:invalid:not(:placeholder-shown) {
     border-color: var(--danger);
 }
+
 .field input:required:placeholder-shown,
 .field textarea:required:placeholder-shown {
     border-color: var(--danger);
@@ -361,8 +362,8 @@
     font-size: 0.8rem;
 }
 
-.field input:invalid:not(:placeholder-shown) + .error,
-.field textarea:invalid:not(:placeholder-shown) + .error {
+.field input:invalid:not(:placeholder-shown)+.error,
+.field textarea:invalid:not(:placeholder-shown)+.error {
     display: block;
 }
 
@@ -538,6 +539,7 @@
 }
 
 @media (hover: hover) {
+
     .product-card:hover,
     .principle:hover,
     .testi:hover,
