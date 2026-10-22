@@ -350,6 +350,10 @@
 .field textarea:invalid:not(:placeholder-shown) {
     border-color: var(--danger);
 }
+.field input:required:placeholder-shown,
+.field textarea:required:placeholder-shown {
+    border-color: var(--danger);
+}
 
 .error {
     display: none;
