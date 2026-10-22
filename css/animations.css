@@ -1,0 +1,202 @@
+/**
+ * animations.css - Animaciones y transiciones de EcoMarket
+ * ESTUDIO:
+ * - fadeUp hace aparecer los elementos desde abajo.
+ * - pulse anima suavemente el botón principal.
+ * - heartPop da movimiento al seleccionar favoritos.
+ * - marquee crea una marquesina continua sin JavaScript.
+ * - Las tarjetas se elevan al pasar el mouse.
+ * - Se respeta la preferencia de movimiento reducido.
+ */
+
+/* ESTUDIO: Animación de entrada */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ESTUDIO: Pulso suave para el botón principal */
+@keyframes pulse {
+    0%,
+    100% {
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    }
+
+    50% {
+        box-shadow: 0 8px 32px rgba(34, 197, 94, 0.32);
+    }
+}
+
+/* ESTUDIO: Efecto de selección del corazón */
+@keyframes heartPop {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.3);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* ESTUDIO: Movimiento de la marquesina */
+@keyframes marquee {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+/* ESTUDIO: Aparición del contenido del banner */
+.hero-content {
+    animation: fadeUp 0.7s ease both;
+}
+
+/* ESTUDIO: Pulso limitado al botón del banner */
+.hero-button {
+    animation: pulse 3s ease-in-out infinite;
+}
+
+/* ESTUDIO: Entrada de las tarjetas */
+.featured-grid .product-card,
+.products-grid .product-card,
+.benefit-card {
+    animation: fadeUp 0.5s ease both;
+}
+
+/* ESTUDIO: Retrasos suaves para dar ritmo a la cuadrícula */
+.featured-grid .product-card:nth-child(2),
+.products-grid .product-card:nth-child(2) {
+    animation-delay: 0.08s;
+}
+
+.featured-grid .product-card:nth-child(3),
+.products-grid .product-card:nth-child(3) {
+    animation-delay: 0.16s;
+}
+
+/* ESTUDIO: Selección de favoritos */
+.fav-check:checked + .fav-btn {
+    animation: heartPop 0.35s ease;
+}
+/* ESTUDIO: Movimiento de la marquesina */
+@keyframes marquee {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+/* ESTUDIO: Marquesina sin JavaScript */
+.marquee {
+    overflow: hidden;
+    padding: 16px 0;
+    background: var(--green-deep);
+    color: var(--green-light);
+    white-space: nowrap;
+}
+
+.marquee-track {
+    display: flex;
+    width: max-content;
+    gap: 48px;
+    animation: marquee 15s linear infinite;
+}
+
+.marquee-track span {
+    flex-shrink: 0;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+}
+
+/* ESTUDIO: Pausa de la marquesina al pasar el cursor */
+.marquee:hover .marquee-track {
+    animation-play-state: paused;
+}
+
+/* ESTUDIO: Respeto por usuarios que prefieren menos movimiento */
+@media (prefers-reduced-motion: reduce) {
+    .hero-content,
+    .hero-button,
+    .featured-grid .product-card,
+    .products-grid .product-card,
+    .benefit-card,
+    .fav-check:checked + .fav-btn,
+    .marquee-track {
+        animation: none;
+    }
+}
+
+/* =========================================
+   BARRA ANIMADA DE SOSTENIBILIDAD
+========================================= */
+
+.marquee {
+    width: 100%;
+    overflow: hidden;
+    background: #27ae60;
+    color: #ffffff;
+    padding: 14px 0;
+}
+
+.marquee__track {
+    display: flex;
+    width: max-content;
+    animation: marquee-scroll 25s linear infinite;
+}
+
+.marquee__content {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    gap: 40px;
+    padding-right: 40px;
+    white-space: nowrap;
+}
+
+.marquee__content span {
+    font-size: 0.95rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+@keyframes marquee-scroll {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+/* Pausar el movimiento cuando el usuario pasa el cursor */
+.marquee:hover .marquee__track {
+    animation-play-state: paused;
+}
+
+/* Respetar las preferencias de movimiento reducido */
+@media (prefers-reduced-motion: reduce) {
+    .marquee__track {
+        animation: none;
+    }
+}
+
+

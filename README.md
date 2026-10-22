@@ -250,3 +250,4 @@ Una vez publicado el sitio, se reemplazará este texto por la URL real y se agre
 
 **Propósito:** proyecto académico de desarrollo web enfocado en HTML5, CSS3, diseño responsive y control de versiones.
 
+
